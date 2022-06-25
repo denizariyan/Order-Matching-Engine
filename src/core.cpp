@@ -1,5 +1,5 @@
 #include <iostream>
-#include "core.h"
+#include "core.hpp"
 
 int main() {
     std::cout << "123" << std::endl;

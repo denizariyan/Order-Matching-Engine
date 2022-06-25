@@ -1,3 +1,14 @@
+# Ignore files with no extensions
+*
+!*.*
+!*/
+
+# CMake folders
+build
+
+# VSCode
+.vscode
+
 # Prerequisites
 *.d
 

@@ -19,7 +19,7 @@ jobs:
 
     steps:
     - name: Install gtest
-      run: sudo apt-get -y install googletest
+      run: sudo apt install googletest libgtest-dev build-essential cmake && cd /usr/src/googletest && sudo cmake . && sudo cmake --build . --target install
     - uses: actions/checkout@v3
 
     - name: Configure CMake

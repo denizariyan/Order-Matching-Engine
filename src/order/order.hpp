@@ -4,37 +4,38 @@
 #include "order_definitions.hpp"
 
 class Order {
-    public:
+public:
+        Order(std::string orderId, std::string userId, order_statuses orderStatus, uint64_t orderOpenTime,
+                uint64_t orderExpireTime, std::string orderPair, order_direction orderType, long double orderPrice,
+                long double orderAmount);
+        virtual ~Order();
 
-    Order(std::string orderId, std::string userId, order_statuses orderStatus, uint64_t orderOpenTime,
-          uint64_t orderExpireTime, std::string orderPair, order_direction orderType, long double orderPrice,
-          long double orderAmount);
-
-// Getters
-        const std::string &getOrderId() const;
-        const std::string &getUserId() const;
-        order_statuses getOrderStatus() const;
-        uint64_t getOrderOpenTime() const;
-        uint64_t getOrderClosedTime() const;
-        uint64_t getOrderExpireTime() const;
-        const std::string &getOrderPair() const;
-        order_direction getOrderType() const;
-        long double getOrderPrice() const;
-        long double getOrderAmount() const;
-        long double getOrderFilledAmount() const;
-        long double getOrderFee() const;
-        long double getAvgPrice() const;
-        const std::vector<std::string> &getTrades() const;
+        // Getters
+        virtual const std::string &getOrderId() const;
+        virtual const std::string &getUserId() const;
+        virtual order_statuses getOrderStatus() const;
+        virtual uint64_t getOrderOpenTime() const;
+        virtual uint64_t getOrderClosedTime() const;
+        virtual uint64_t getOrderExpireTime() const;
+        virtual const std::string &getOrderPair() const;
+        virtual order_direction getOrderType() const;
+        virtual long double getOrderPrice() const;
+        virtual long double getOrderAmount() const;
+        virtual long double getOrderFilledAmount() const;
+        virtual long double getOrderFee() const;
+        virtual long double getAvgPrice() const;
+        virtual const std::vector<std::string> &getTrades() const;
 
         // Setters
-        void setOrderStatus(order_statuses orderStatus);
-        void setOrderClosedTime(uint64_t orderClosedTime);
-        void setOrderFilledAmount(long double orderFilledAmount);
-        void setOrderFee(long double orderFee);
-        void setAvgPrice(long double avgPrice);
-        void addTrades(std::string order_id);
+        virtual void setOrderStatus(order_statuses orderStatus);
+        virtual void setOrderClosedTime(uint64_t orderClosedTime);
+        virtual void setOrderFilledAmount(long double orderFilledAmount);
+        virtual void setOrderFee(long double orderFee);
+        virtual void setAvgPrice(long double avgPrice);
+        virtual void addTrades(std::string order_id);
 
-    private:
+
+private:
         std::string order_id_; // use boost::uuid
         std::string user_id_;
         order_statuses order_status_;

@@ -98,3 +98,7 @@ void Order::setAvgPrice(long double avgPrice) {
 void Order::addTrades(std::string order_id) {
     trades_.emplace_back(order_id);
 }
+
+Order::~Order() {
+
+}

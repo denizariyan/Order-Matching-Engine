@@ -1,6 +1,6 @@
 #include "gmock/gmock.h"
 #include <gtest/gtest.h>
-#include "../order.hpp"
+#include "../Order.hpp"
 
 using ::testing::AtLeast;
 using ::testing::Return;

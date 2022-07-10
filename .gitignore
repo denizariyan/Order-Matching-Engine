@@ -5,6 +5,9 @@
 
 # CMake folders
 build
+cmake-build-debug
+
+.idea
 
 # VSCode
 .vscode
